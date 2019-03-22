@@ -1,0 +1,3 @@
+#! /bin/bash
+
+python top-spotify-track/top_spotify_track.py
