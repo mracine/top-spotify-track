@@ -18,14 +18,12 @@ def default_page():
 def find_artist_top_track():
     configpath = os.environ['TOP_SPOTIFY_CONFIG']
     config = {}
-    print(configpath)
 
     # Load config for client creds
     if os.path.exists(configpath):
         with open(configpath, "r") as f:
             config = json.loads(f.read())
     if not config or not config["spotify_id"] or not config["spotify_secret"]:
-        print("HEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEREEEEEEEEEEEEEEEEEEEE")
         return abort(404)
 
     client_credentials_manager = SpotifyClientCredentials(client_id=config["spotify_id"], client_secret=config["spotify_secret"])
